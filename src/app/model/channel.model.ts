@@ -1,11 +1,10 @@
-import { Message } from './message.model';
 import { Thread } from './thread.model';
 
 export class Channel {
 
     public threads: Array<Thread>;
     private threadsById: Map<number, Thread>;
-    
+
     public timeViewed: string;
 
     public deserialize(input: any) {
@@ -88,6 +87,8 @@ export class Channel {
                 } else {
                     return 0;
                 }
+            } else {
+              return 0;
             }
         });
 

@@ -1,0 +1,38 @@
+main {
+  --controls-height: 3rem;
+  background-image: url("/assets/bg-logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    *:not(:last-child) {
+      margin-right: var(--margin-standard);
+    }
+
+    .input {
+      width: 10rem;
+      height: var(--controls-height);
+      line-height: var(--controls-height);
+      padding: 0 1rem;
+    }
+
+    .button {
+      width: 6rem;
+      height: var(--controls-height);
+      line-height: var(--controls-height);
+    }
+  }
+}

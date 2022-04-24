@@ -1,1 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
+@import "normalize.scss";
+
+:root {
+  font-family: 'Arial', sans-serif;
+  font-size: 12pt; // rem
+
+  // Цветовая схема (комплиментарный от #D7CABB):
+  // Основной #D7CABB
+  // Кнопка #5C7C8A
+  // Кнопка актив #BACED6
+  // Светлый #FFFBF7
+  // Тёмный #8A7B6A
+
+  --color-black: black;
+  --color-page-bg: #D7CABB;
+
+  // input
+  --color-input-bg: #ffffff;
+
+  // button
+  --color-button-bg: #626262;
+  --color-button-bg-red: #cb5b50;
+  --color-button-bg-red-hover: #ec6c60;
+  --color-button-bg-red-active: #9d473f;
+  --color-button-bg-blue: #5C7C8A;
+  --color-button-bg-blue-hover: #739bab;
+  --color-button-bg-blue-active: #455c67;
+  --color-button-bg-hover: #4f4e4e;
+  --color-button-bg-active: #000000;
+  --color-button-text: #FFFBF7;
+
+  --border-radius: 3px;
+  --margin-standard: 0.4rem;
+}
+
+body {
+  background-color: var(--color-page-bg);
+}
+
+.input {
+  height: 1.5rem;
+  background-color: var(--color-input-bg);
+  border: none;
+  border-radius: var(--border-radius);
+  &:focus {
+    outline: none;
+  }
+}
+
+.textarea {
+  border: none;
+  border-radius: var(--border-radius);
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  height: 1.5rem;
+  background-color: var(--color-button-bg);
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--color-button-text);
+
+  &:hover {
+    background-color: var(--color-button-bg-hover);
+  }
+  &:active {
+    background-color: var(--color-button-bg-active);
+  }
+
+  &__red {
+    background-color: var(--color-button-bg-red);
+    &:hover {
+      background-color: var(--color-button-bg-red-hover);
+    }
+    &:active {
+      background-color: var(--color-button-bg-red-active);
+    }
+  }
+
+  &__blue {
+    background-color: var(--color-button-bg-blue);
+    &:hover {
+      background-color: var(--color-button-bg-blue-hover);
+    }
+    &:active {
+      background-color: var(--color-button-bg-blue-active);
+    }
+  }
+}

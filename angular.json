@@ -75,7 +75,8 @@
               "browserTarget": "plllasma-ui:build:production"
             },
             "development": {
-              "browserTarget": "plllasma-ui:build:development"
+              "browserTarget": "plllasma-ui:build:development",
+              "proxyConfig": "src/proxy.conf.js"
             }
           },
           "defaultConfiguration": "development"

@@ -1,1 +1,8 @@
-<p>login-page works!</p>
+<main>
+  <form [formGroup]="form">
+    <button class="button button__blue">Где я</button>
+    <input class="input" type="text" formControlName="login" autofocus>
+    <input class="input" type="password" formControlName="password">
+    <button class="button button__red">Войти</button>
+  </form>
+</main>

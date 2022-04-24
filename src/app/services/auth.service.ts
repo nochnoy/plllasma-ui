@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject, Observable, of} from "rxjs";
 import {IUser} from "../model/user.model";
 import {RestService} from "./rest.service";
 
@@ -15,6 +15,9 @@ export class AuthService {
   ) { }
 
   login() : Observable<IUser> {
-
+    return of({
+      login: 'ya',
+      name: 'Йа'
+    });
   }
 }
