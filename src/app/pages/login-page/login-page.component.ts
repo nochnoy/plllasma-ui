@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import {AuthService} from "../../services/auth.service";
+import {UntilDestroy, untilDestroyed} from "@ngneat/until-destroy";
 
+@UntilDestroy()
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -8,7 +11,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public authService: AuthService
+  ) { }
 
   form: FormGroup;
 
@@ -21,6 +26,13 @@ export class LoginPageComponent implements OnInit {
       login: new FormControl(''),
       password: new FormControl(''),
     });
+  }
+
+  onLogin(): void {
+    const form = this.form.getRawValue();
+    this.authService.login(form.login, form.password).pipe(
+      untilDestroyed(this)
+    ).subscribe();
   }
 
 }

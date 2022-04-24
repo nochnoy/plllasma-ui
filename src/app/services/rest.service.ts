@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,16 @@ export class RestService {
 
   }
 
-  login(login:string, password:string) {
-
+  login(login:string, password:string): Observable<any> {
+    return this.http.post(
+      RestService.ApiPath,
+      {
+        action: 'login',
+        login,
+        password,
+      },
+      {headers: {...this.headers}}
+    );
   }
 
   /**

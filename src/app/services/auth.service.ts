@@ -11,13 +11,10 @@ export class AuthService {
   authorized$ = new BehaviorSubject<boolean>(false);
 
   constructor(
-    restService: RestService,
+    public restService: RestService,
   ) { }
 
-  login() : Observable<IUser> {
-    return of({
-      login: 'ya',
-      name: 'Йа'
-    });
+  login(login:string, password:string) : Observable<IUser> {
+    return this.restService.login(login, password);
   }
 }
